@@ -23,6 +23,12 @@ def load_file(file_path):
         result = file.read()
     return result
 
+def load_json(file_path):
+    result = None
+    with open(make_file_path(file_path), "r", encoding="utf-8") as file:
+        result = json.load(file)
+    return result
+
 def load_file_line_by_line(file_path):
     with open(make_file_path(file_path), "r", encoding="utf-8") as file:
         for line in file:
