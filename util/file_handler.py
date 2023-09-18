@@ -11,7 +11,7 @@ def saveAsFile(file_path, content):
 
 def saveAsJson(file_path, dictionary):
     with open(file_path, 'w', encoding="utf-8") as file:
-        json.dump(dictionary, file)
+        json.dump(dictionary, file, ensure_ascii=False)
 
 def saveAsFileWithGenerator(file_path, iterable_content):
     with open(file_path, "w", encoding="utf-8") as file:
