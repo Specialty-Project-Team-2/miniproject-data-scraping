@@ -6,6 +6,8 @@ from util.file_handler import saveAsFile, make_file_path
 from collections import deque
 from time import sleep
 
+from random import uniform
+
 
 def scroll_until_limit(driver : WebDriver, max_num = 500, unit_scroll_height = 1000000, pause_time=1, patience=5):
     javascript_scroll_down = f"window.scrollTo(0, window.pageYOffset + {unit_scroll_height})"
@@ -58,3 +60,6 @@ def scroll_until_lender_of(driver : WebDriver, css_selector, total_sec=500, unit
 def save_html_as(driver : WebDriver, file_name):
     file_path = make_file_path(file_name)
     saveAsFile(file_path, driver.page_source)
+
+def sleep_like_human():
+    sleep(uniform(3, 5))
